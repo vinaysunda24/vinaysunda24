@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+.contact-section {
+  position: relative;
+  min-height: 520px;
+  padding: 90px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(circle, #ffecd2 0%, #fcb69f 100%);
+
+
+  opacity: 0.72;
+}
+
+.contact-glass {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: auto;
+  padding: 38px 32px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.20);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 30px 0 32px 0;
+  align-items: center;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(0,0,0,0.16);
+  padding: 10px 26px;
+  border-radius: 18px;
+  text-decoration: none;
+  box-shadow: 0 2px 14px 0 rgba(127,0,255,0.10);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+.contact-link.email:hover {
+  background: linear-gradient(90deg, #00ffe7, #7f00ff);
+  color: #232946;
+}
+.contact-link.instagram:hover {
+  background: linear-gradient(90deg, #fd5c63, #fcb045, #833ab4);
+  color: #fff;
+}
+.contact-link.linkedin:hover {
+  background: linear-gradient(90deg, #0e76a8, #00ffe7);
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+input, textarea {
+
+  padding: 13px;
+  border: 1.5px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+input:focus, textarea:focus {
+  border-color: #81407e;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #b2eede, #205247);
+  color: #232946;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 18px 2px #69bbb3;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #7f00ff, #00ffe7);
+  box-shadow: 0 0 32px 6px #000000;
+  transform: scale(1.04);
+}
+
+.formMessage {
+  margin-top: 10px;
+  color: #00ffe7;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px #00ffe7;
+}
+
+@media (max-width: 700px) {
+  .contact-glass { padding: 18px 7px; }
+  .contact-links { gap: 10px; }
+}
+
+    </style>
+</head>
+<body>
+    <section id="contact-section">
+  <div class="contact-bg"></div>
+  <div class="glass contact-glass">
+    <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+    <p>Feel free to reach out via email or connect with me on social media!</p>
+    <div class="contact-links">
+      <a href="mailto:vianysunda24.gmail@example.com" class="contact-link email" target="_blank">
+        <i class="fas fa-envelope"></i> vinaysunda24.gmail@example.com
+      </a>
+      <a href="https://instagram.com/yourusername" class="contact-link instagram" target="_blank">
+        <i class="fab fa-instagram"></i> @yourusername
+      </a>
+      <a href="https://linkedin.com/in/vinay-sunda-360b37321" class="contact-link linkedin" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Your Email" required/>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+    <div id="formMessage"></div>
+  </div>
+</section>
+
+</body>
+</html>

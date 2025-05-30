@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        .about-section {
+  position: relative;
+  min-height: 500px;
+  padding: 80px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #00ffe7 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, #ff00c8 0%, transparent 60%),
+    linear-gradient(120deg, #181c2f 60%, #232946 100%);
+  opacity: 0.9;
+  filter: blur(2px);
+}
+
+.about-bg::before,
+.about-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.about-bg::before {
+  width: 260px; height: 260px;
+  left: 10%; top: 10%;
+  background: #00ffe7;
+  animation: float1 8s ease-in-out infinite alternate;
+}
+.about-bg::after {
+  width: 200px; height: 200px;
+  right: 10%; bottom: 10%;
+  background: #ff00c8;
+  animation: float2 10s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+  0% { transform: translateY(0) scale(1);}
+  100% { transform: translateY(30px) scale(1.1);}
+}
+@keyframes float2 {
+  0% { transform: translateY(0) scale(1);}
+  100% { transform: translateY(-30px) scale(1.08);}
+}
+
+.about-glass {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 18px 2px var(--primary), 0 0 32px 8px var(--accent);
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.about-text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.hello {
+  font-size: 1.4rem;
+  margin-right: 6px;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--primary);
+}
+.highlight2 {
+  color: var(--accent);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--accent);
+}
+.tech {
+  color: var(--secondary);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.about-skills {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.about-skills li {
+  background: rgba(0,255,231,0.10);
+  border: 1.5px solid var(--primary);
+  border-radius: 18px;
+  padding: 8px 18px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 8px 0 var(--primary);
+  transition: background 0.2s, color 0.2s;
+}
+.about-skills li:hover {
+  background: var(--primary);
+  color: #181c2f;
+}
+
+@media (max-width: 700px) {
+  .about-content { flex-direction: column; gap: 18px; align-items: center; }
+  .about-photo { margin: 0 auto; }
+}
+    </style>
+</head>
+<body>
+    <section id="about-section">
+  <div class="about-bg"></div>
+  <div class="glass about-glass">
+    <h2><i class="fas fa-user-astronaut"></i> About Me</h2>
+    <div class="about-content">
+      <img src="image/vinay.jpg" alt="Vinay" class="about-photo" width="80px">
+      <div class="about-text">
+        <p>
+          <span class="hello">👋</span> Hi, I’m <strong>Vinay Sunda</strong> — a <span class="highlight">Web Developer</span> and <span class="highlight2">UI/UX Explorer</span> passionate about building immersive, futuristic web experiences.
+        </p>
+        <p>
+          My journey began with curiosity for technology and design, and now I specialize in <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, and modern frameworks. I love blending creativity with code to craft interfaces that are both beautiful and intuitive.
+        </p>
+        <ul class="about-skills">
+          <li><i class="fab fa-html5"></i> HTML5</li>
+          <li><i class="fab fa-css3-alt"></i> CSS3</li>
+          <li><i class="fab fa-js"></i> JavaScript</li>
+          <li><i class="fab fa-react"></i> React</li>
+          <li><i class="fas fa-palette"></i> UI/UX Design</li>
+        </ul>
+        <p>
+          <i class="fas fa-rocket"></i> Let’s connect and create something amazing together!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+
